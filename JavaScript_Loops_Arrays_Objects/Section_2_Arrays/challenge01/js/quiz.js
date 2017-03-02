@@ -9,24 +9,25 @@ var answer;
 var numCorrect = 0;
 var response;
 var html;
+var questionsCorrect = [ ];
+var questionsWrong = [ ];
 
 
 function print(message) {
-  document.write(message);
+  var outputDiv = document.getElementById('output');
+  outputDiv.innerHTML = message;
 }
 
-
-
-  for ( var i = 0; i < questions.length; i += 1 ) {
-
+for ( var i = 0; i < questions.length; i += 1 ) {
     question = questions[i][0];
     answer = questions[i][1];
-    response = prompt(question)
+    response = prompt(question);
 
-
-
-      if ( response.toLowerCase() === answer ) {
+    if ( response.toLowerCase() === answer ) {
         numCorrect += 1;
+        questionsCorrect.push(question);
+      } else {
+        questionsWrong.push(question);
       }
   }
 
