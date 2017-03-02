@@ -1,41 +1,38 @@
-var quiz = [
+var questions = [
   [ 'What is the capital of Australia?', 'canberra' ],
   [ 'Where do you find the Red Square?', 'moscow' ],
   [ 'What is the capital of Thailand?', 'bangkok' ]
 ];
+
+var question;
+var answer;
+var numCorrect = 0;
+var response;
+var html;
 
 
 function print(message) {
   document.write(message);
 }
 
-function printList(questions) {
-  var htmlCorrect = 'You answered these questions correct: <ol>';
-  var htmlWrong = 'You answered these questions wrong: <ol>';
-  var numCorrect = 0;
+
 
   for ( var i = 0; i < questions.length; i += 1 ) {
 
-    var answer = prompt(questions[i][0]);
+    question = questions[i][0];
+    answer = questions[i][1];
+    response = prompt(question)
 
-      if ( answer.toLowerCase() === questions[i][1] ) {
-        htmlCorrect += '<li>' + questions[i][0] + '</li>';
+
+
+      if ( response.toLowerCase() === answer ) {
         numCorrect += 1;
-      } else {
-        htmlWrong += '<li>' + questions[i][0] + '</li>';
       }
   }
 
-  htmlCorrect += '</ol>';
-  htmlWrong += '</ol>';
+html = "You got " + numCorrect + " question(s) right."
 
-  print("<div>You answered " + numCorrect + " questions correct!</div>");
-  print(htmlCorrect);
-  print(htmlWrong);
-
-}
-
-printList(quiz);
+print(html);
 
 
 
