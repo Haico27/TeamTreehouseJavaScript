@@ -18,6 +18,15 @@ function print(message) {
   outputDiv.innerHTML = message;
 }
 
+function printList(array) {
+  var listHTML = '<ol>';
+  for (var i = 0; i < array.length; i += 1) {
+    listHTML += '<li>' + array[i] + '</li>'
+  }
+  listHTML += '</ol>';
+  return listHTML
+}
+
 for ( var i = 0; i < questions.length; i += 1 ) {
     question = questions[i][0];
     answer = questions[i][1];
@@ -32,7 +41,10 @@ for ( var i = 0; i < questions.length; i += 1 ) {
   }
 
 html = "You got " + numCorrect + " question(s) right."
-
+html += '<h2>You got these questions correct:</h2>';
+html += printList(questionsCorrect);
+html += '<h2>You got these questions wrong:</h2>';
+html += printList(questionsWrong);
 print(html);
 
 
