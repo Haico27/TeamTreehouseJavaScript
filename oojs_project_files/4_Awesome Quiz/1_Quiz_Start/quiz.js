@@ -14,8 +14,8 @@ Quiz.prototype.guess = function(answer) {
 
 Quiz.prototype.getCurrentQuestion = function() {
   return this.questions[this.currentQuestionIndex];
-}
+};
 
 Quiz.prototype.hasEnded = function() {
-  return currentQuestionIndex >= this.questions.length;
+  return this.currentQuestionIndex >= this.questions.length;
 }
