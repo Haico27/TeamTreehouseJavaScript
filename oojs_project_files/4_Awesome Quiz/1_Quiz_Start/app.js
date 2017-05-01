@@ -1,11 +1,16 @@
+
+//create the questions for the quiz
+var questions = [
+      new Question("What is the capital city of Iceland?", ["Reykjavik", "Bangkok"] , "Reykjavik"),
+      new Question("In which city in Thailand is the White Temple located?", ["Chiang Mai", "Chiang Rai"], "Chiang Rai");
+];
+
+//create the quiz
 var quiz = new Quiz();
 
-var question1 = new Question("What is the capital city of Iceland?", "" , "Reykjavik");
-var question2 = new Question("In which city in Thailand is the White Temple located?", "", "Chiang Rai");
 
-quiz.add(question1);
-quiz.add(question2);
+//add the questions to the quiz
+quiz.add(questions);
+
 
 var questionElement = document.getElementById('question');
-
- 
